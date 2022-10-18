@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_alphabet - function with no arguments
+ * print_alphabet_x10 - function with no arguments
  *
  * Description: prints 10 times the alphabet
  *
