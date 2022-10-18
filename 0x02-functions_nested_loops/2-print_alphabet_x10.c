@@ -3,7 +3,8 @@
 /**
  * print_alphabet - function with no arguments
  *
- * Description: prints 10 times the alphabets
+ * Description: prints 10 times the alphabet
+ *
  */
 void print_alphabet_x10(void)
 {
