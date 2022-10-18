@@ -4,7 +4,8 @@
  * print_sign - with one argument
  * @n: an input character
  * description: prints sign of numbers
- * Returns: 1 if greater than 0, 0 if 0, -1 if lesser
+ * zero or positive
+ * Return: int.
  */
 int print_sign(int n)
 {
