@@ -15,7 +15,7 @@ int main(void)
 	{
 		if (multi % 3 == 0 || multi % 5 == 0)
 		{
-			res += 1;
+			res += multi;
 		}
 		multi += 1;
 	}
