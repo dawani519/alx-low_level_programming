@@ -25,4 +25,5 @@ int main(void)
 		if (c < 5035488507601418376)
 			printf(", ");
 	}
+	return (0);
 }
