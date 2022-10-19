@@ -13,7 +13,7 @@ int main(void)
 
 	while (multi < 1024)
 	{
-		if (multi % 3 == 0 || multi % s == 0)
+		if (multi % 3 == 0 || multi % 5 == 0)
 		{
 			res += 1;
 		}

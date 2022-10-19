@@ -7,7 +7,7 @@
  * Description: if/else and nested loop to print multiple table
  * Return: 0
  */
-void print_times_table(int n)
+void print_timmes_table(int n)
 {
 	int i, j, result;
 
