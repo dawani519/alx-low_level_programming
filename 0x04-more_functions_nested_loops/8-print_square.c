@@ -1,10 +1,10 @@
 #include "main.h"
 /**
  * print_square - function with int type one argument
- * @size: 1st int argument
+ * @size: size of square sides
  *
  * Description: nested loops to pring square with new line
- * Return: na
+ * Return: nothing.
  */
 void print_square(int size)
 {
@@ -12,13 +12,17 @@ void print_square(int size)
 
 	if (size > 0)
 	{
-		for (i = 0; i < size; i++)
+		y = 0;
+		while (y < size)
 		{
-			for (j = 0; j < size; j++)
+			x = 0;
+			while (x < size)
 			{
 				_putchar('#');
+				x++;
 			}
 			_putchar('\n');
+			y++;
 		}
 	}
 	else
