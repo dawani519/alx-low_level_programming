@@ -5,24 +5,21 @@
  * @size: Size of square sides
  *
  * Return: Nothing
+ *
  */
 void print_square(int size)
 {
-	int x, y;
+	int col, row;
 
 	if (size > 0)
 	{
-		y = 0;
-		while (y < size)
+		for (row = 0; row < size; row++)
 		{
-			x = 0;
-			while (x < size)
+			for (col = 0; col < size; col++)
 			{
-				_putchar('#');
-				x++;
+				_putchar(35);
 			}
 			_putchar('\n');
-			y++;
 		}
 	}
 	else
