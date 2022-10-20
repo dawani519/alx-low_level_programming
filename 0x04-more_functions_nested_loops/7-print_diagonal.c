@@ -1,20 +1,31 @@
 #include "main.h"
 
 /**
- * print_line - Print a line of n length
- * @n: Length of line
+ * print_diagonal - Print n number of '\'s
+ * @n: Number of '\'s to print
  *
  * Return: Nothing
  */
-void print_line(int n)
+void print_diagonal(int n)
 {
-	int c = 0;
+	int c, s;
 
-	while (c < n)
+	c = 0;
+	if (n > 0)
 	{
-		if (n > 0)
-			_putchar('_');
-		c++;
+		while (c < n)
+		{
+			s = 0;
+			while (s < c)
+			{
+				_putchar(' ');
+				s++;
+			}
+			_putchar('\\');
+			_putchar('\n');
+			c++;
+		}
 	}
-	_putchar('\n');
+	else
+		_putchar('\n');
 }
