@@ -1,50 +1,37 @@
 #include "main.h"
 
 /**
- * print_number - Print any number one character at a time
- * @n: Number to print
- *
- * Return: Nothing
+ * print_number - function that prints an integer..
+ * @n: input value to check
+ * Return: nothing.
  */
+
 void print_number(int n)
 {
-	long hn;
-	long n2 = n;
+	unsigned int num, num2;
+	int i;
+	int aux = 1;
 
-	if (n2 < 0)
+	if (n < 0)
 	{
+		n = n * -1;
 		_putchar('-');
-		n2 *= -1;
 	}
-	if (n2 / 100000 != 0)
+	num = n;
+	num2 = num;
+	if (num > 9)
 	{
-		hn = n2 / 100000;
-		_putchar(hn / 10000 % 10 + '0');
-		_putchar(hn / 1000 % 10 + '0');
-		_putchar(hn / 100 % 10 + '0');
-		_putchar(hn / 10 % 10 + '0');
-		_putchar(hn % 10 + '0');
+		while (num >= 10)
+		{
+			aux = aux * 10;
+			num = num / 10;
+		}
+		_putchar((num2 / aux) + '0');
+		aux = aux / 10;
+
+		for (i = aux; i >= 1; i = i / 10)
+			_putchar((num2 / i) % 10 + '0');
 	}
-	hn = n2 % 100000;
-	if (hn / 10000 % 10 != 0)
-	{
-		_putchar(hn / 10000 % 10 + '0');
-		_putchar(hn / 1000 % 10 + '0');
-		_putchar(hn / 100 % 10 + '0');
-		_putchar(hn / 10 % 10 + '0');
-	}
-	else if (hn / 1000 % 10 != 0)
-	{
-		_putchar(hn / 1000 % 10 + '0');
-		_putchar(hn / 100 % 10 + '0');
-		_putchar(hn / 10 % 10 + '0');
-	}
-	else if (hn / 100 % 10 != 0)
-	{
-		_putchar(hn / 100 % 10 + '0');
-		_putchar(hn / 10 % 10 + '0');
-	}
-	else if (hn / 10 % 10 != 0)
-		_putchar(hn / 10 % 10 + '0');
-	_putchar(hn % 10 + '0');
+	else
+		_putchar(num + '0');
 }
