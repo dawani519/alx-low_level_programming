@@ -1,23 +1,22 @@
 #include "main.h"
-
 /**
- * print_square - Print a nxn square of #
- * @size: Size of square sides
+ * print_square - function with int type one argument
+ * @size: 1st int argument
  *
- * Return: Nothing
- *
+ * Description: nested loops to pring square with new line
+ * Return: na
  */
 void print_square(int size)
 {
-	int col, row;
+	int i, j;
 
 	if (size > 0)
 	{
-		for (row = 0; row < size; row++)
+		for (i = 0; i < size; i++)
 		{
-			for (col = 0; col < size; col++)
+			for (j = 0; j < size; j++)
 			{
-				_putchar(35);
+				_putchar('#');
 			}
 			_putchar('\n');
 		}
