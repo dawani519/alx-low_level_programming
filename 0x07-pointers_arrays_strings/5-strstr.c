@@ -20,6 +20,6 @@ if (needle[con2] == '\0')
 {
 	return (haystack + con1);
 }
-}
+{
 return (NULL);
 }
