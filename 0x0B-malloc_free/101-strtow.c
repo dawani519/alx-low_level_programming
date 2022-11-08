@@ -1,50 +1,54 @@
 #include "main.h"
-#include <stdlib.h>
+/**
+ * argstostr - a function that concatenates all the arguments of your program
+ * @ac: count of args passed to the function
+ * @av:array of arguments
+ * 
+ * Return: pointer to the new string
+ */
+
+char *argstostr(int ac, char **av)
+{
+	char *new_string = NULL;
+	int k = 0, i = ac, j, sum = 0, temp = 0;
+
+	if (ac == 0 || av == NULL)
+		return (NULL);
+	while (ac--)
+		sum += (len(av[ac]) + 1);
+	new_string = (char *) malloc(sum + 1);
+	if (new_string != NULL)
+	{
+		while (k < i)
+		{
+			for (j = 0; av[k][j] != '\0'; j++)
+				new_string[j + temp] = av[k][j];
+			new_string[temp + j] = '\n';
+			temp += (j + 1);
+			k++;
+		}
+		new_string[temp] = '\0';
+	}
+	else
+	{
+		return (NULL);
+	}
+	return (new_string);
+}
 
 /**
- * strtow - A function that splits a string into words
- * @str: An input pointer of the string to split
- * Return: Apointer to concatened strings or NULL if it str is NULL
+ * len - returns length of str
+ * @str: string counted
+ * Return: returns the length
  */
-char **strtow(char *str)
+int len(char *str)
 {
-	char **array;
-	int i = 0, j, m, k = 0, len = 0, count = 0;
+	int len = 0;
 
-	if (str == NULL || *str == '\0')
-		return (NULL);
-	for (; str[i]; i++)
+	if (str != NULL)
 	{
-		if ((str[i] != ' ' || *str != '\t') &&
-				((str[i + 1] == ' ' || str[i + 1] == '\t') || str[i + 1] == '\n'))
-			count++;
+		while (str[len])
+			len++;
 	}
-	if (count == 0)
-		return (NULL);
-	array = malloc(sizeof(char *) * (count + 1));
-	if (array == NULL)
-		return (NULL);
-	for (i = 0; str[i] != '\0' && k < count; i++)
-	{
-		if (str[i] != ' ' || str[i] != '\t')
-		{
-			len = 0;
-			j = i;
-			while ((str[j] != ' ' || str[j] != '\t') && str[j] != '\0')
-				j++, len++;
-			array[k] = malloc((len + 1) * sizeof(char));
-			if (array[k] == NULL)
-			{
-				for (k = k - 1; k >= 0; k++)
-					free(array[k]);
-				free(array);
-				return (NULL);
-			}
-			for (m = 0; m < len; m++, i++)
-				array[k][m] = str[i];
-			array[k++][m] = '\0';
-		}
-	}
-	array[k] = NULL;
-	return (array);
+	return (len);
 }
